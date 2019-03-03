@@ -3,6 +3,7 @@
 ## Installation on Ubuntu 18.04 AMD64
 
 ```
+
 apt-get update -y && apt-get upgrade -y
 
 
@@ -17,3 +18,6 @@ kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12
 
 
 ```
+If you get NumCPU Error , use this 
+
+`kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12 --ignore-preflight-errors=NumCPU`
