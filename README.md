@@ -4,7 +4,7 @@
 
 ```
 
-apt-get update -y && apt-get upgrade -y
+#apt-get update -y && apt-get upgrade -y
 
 
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
@@ -14,10 +14,10 @@ EOF
 apt-get update && apt-get install -y kubelet kubeadm kubectl
 
 
-kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12
+#kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12
 
 
 ```
 If you get NumCPU Error , use this 
 
-`kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12 --ignore-preflight-errors=NumCPU`
+`#kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12 --ignore-preflight-errors=NumCPU`
