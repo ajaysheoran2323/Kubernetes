@@ -21,9 +21,9 @@ You will get a join token in end. Keep that handy
 
 On worker node , paste that token you copied
 
-```
-If you get NumCPU Error , use this 
 
+If you get NumCPU Error , use this 
+```
 `#kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12 --ignore-preflight-errors=NumCPU`
 ```
 
@@ -49,3 +49,8 @@ Run below commands ton install `flannel` plugin::
 ```
 
 Run `kubectl get pods --all-namespaces` to see if all pods are in running state. Once all are up, run `kubectl get nodes` to see if Master node is `Ready`
+```
+root@ip-172-31-31-14:/home/ubuntu/kube/yaml# kubectl get nodes
+NAME              STATUS   ROLES    AGE   VERSION
+ip-172-31-31-14   Ready    master   11m   v1.13.4
+```
