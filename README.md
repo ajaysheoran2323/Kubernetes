@@ -14,12 +14,12 @@ EOF
 apt-get update && apt-get install -y kubelet kubeadm kubectl
 ```
 
-To initiate master node
+#### To initiate master node
 `#kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12`
 
 You will get a join token in end. Keep that handy
 
-On worker node , paste that token you copied
+#### On worker node , paste that token you copied
 
 
 If you get NumCPU Error , use this 
