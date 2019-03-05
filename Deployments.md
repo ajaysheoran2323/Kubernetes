@@ -33,5 +33,7 @@ spec:
  Run `kubectl apply -f first-deployment.yaml`
  
  `kubectl get deployments --all-namespaces`
+ 
  `kubectl describe deployment -n default`
+ 
  `kubectl delete deployment`
