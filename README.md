@@ -17,15 +17,19 @@ apt-get update && apt-get install -y kubelet kubeadm kubectl
 #### To initiate master node
 `#kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12`
 
-You will get a join token in end. Keep that handy
-
-#### On worker node , paste that token you copied
-
-
 If you get NumCPU Error , use this 
 ```
 `#kubeadm init --pod-network-cidr=10.244.0.0/16 --service-cidr=10.96.0.0/12 --ignore-preflight-errors=NumCPU`
 ```
+
+
+You will get a join token in end. Keep that handy
+
+
+#### On worker node , paste that token you copied
+
+
+`kubeadm join 172.31.31.222:6443 --token vjdts6.2dil5zuceqq22x6h --discovery-token-ca-cert-hash sha256:0dfda522f1d622effda0883c30aa21fe05b246552f10d64ecd60db0ccb3a0793`
 
 Once you the installation completes, you can run below command on kubenetes Master:
 
