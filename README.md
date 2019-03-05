@@ -41,7 +41,7 @@ ip-172-31-31-14   NotReady   master   113s   v1.13.4
 You can see that `STATUS` is `NotReady`, this is because you need networking also for `kubelet` to handle resources on worker node. 
 Run below command to install networking plugin. There are number of networking plugins available and you can choose any of the, We will use `flannel`.
 
-Run below commands on K8s Master to install `flannel` plugin::
+Run below commands on K8s Master to install `Calico` plugin::
 
 ```
  #kubectl apply -f https://docs.projectcalico.org/v3.5/getting-started/kubernetes/installation/hosted/etcd.yaml
