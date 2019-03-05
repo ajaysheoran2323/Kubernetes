@@ -57,3 +57,14 @@ spec:
 ```
 
 To apply this, run `kubectl create -f first-pod.yaml`
+
+--------------------------------------------------------
+
+
+#### K8s basic commands:
+
+`kubectl logs first-pod` to see the logs of pod
+`kubectl logs -f first`  to see trailing logs of pod
+`kubectl describe pod first-pod` to see details of pod.
+`kubectl delete pod` to delete running pod
+`kubectl get pods -n namespace` to see pods in `namespace` namespace. B y default if you do not provide `-n` , it will use `default` namespace.
