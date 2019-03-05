@@ -72,3 +72,5 @@ To apply this, run `kubectl create -f first-pod.yaml`
 `kubectl delete pod` to delete running pod
 
 `kubectl get pods -n namespace` to see pods in `namespace` namespace. B y default if you do not provide `-n` , it will use `default` namespace.
+
+`kubectl get pod first-pod -o yaml` to get yaml file.
