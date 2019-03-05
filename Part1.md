@@ -2,6 +2,7 @@
 
 
 Once you have your own EKS or GKP or AKS ready, you can run below basic command:
+
 --------------------------------------------------------
 To lits all nodes including Master node
 
@@ -38,3 +39,21 @@ kube-system   tiller-deploy-6fb6d4777d-rkzns       1/1     Running   0          
 kube-system   tunnelfront-699db78879-6z8qw         1/1     Running   0          110m
 ```
 
+--------------------------------------------------------
+
+create a `first-pod.yaml` file for creating our first pod
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: first-pod
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:trusty
+    command: ["echo"]
+    args: ["Hello World"]
+```
+
+To apply this, run `kubectl create -f first-pod.yaml`
