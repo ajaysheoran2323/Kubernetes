@@ -1,1 +1,66 @@
 
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+    name: configmap
+    labels:
+        app: nginx   
+data:
+    index.html: |
+        "hello  world. Config map testing 1   2   3"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx
+    labels:
+        app: nginx
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            app: nginx  
+    template:
+        metadata: 
+            name: nginx
+            labels:
+                app: nginx
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx
+                  imagePullPolicy: Always
+                  volumeMounts:
+                    mountPath: /usr/share/nginx/html
+                    name: configmap-as-volume
+                  
+            volumes:
+                - name: configmap-as-volume
+                  configMap:
+                    name: configmap
+                    
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: nginx-service
+    labels:
+        app: nginx
+
+spec:
+    selector: 
+        app: nginx
+    ports:
+        - name: http
+          protocol: TCP
+          port: 80
+          
+
+        
+    
+          
+
+        
+    
