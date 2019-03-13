@@ -1,23 +1,15 @@
 apiVersion: v1
-items:
-- apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    name: example-pv
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    capacity:
-      storage: 100M
-    local:
-      path: /Users/ajaykumar/kube
-    nodeAffinity:
-      required:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - example-node
-    persistentVolumeReclaimPolicy: Retain
-    storageClassName: local-storage
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    volumeMounts:
+    - mountPath: /mnt/main
+      name: volume
+  volumes:
+  - name: volume
+    hostPath:
+      path: /Users/ajaykumar/kube/
