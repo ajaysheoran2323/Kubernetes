@@ -20,11 +20,33 @@ kubectl create secret generic db-user-pass --from-file=./username.txt --from-fil
 
 
 ```
-To get secrets:
+##### To get secrets:
 
 `kubectl get secrets`
 
 `kubectl describe secrets/db-user-pass`
 
+
+
+### Creating a Secret Manually
+```
+echo -n 'admin' | base64
+YWRtaW4=
+echo -n '1f2d1e2e67df' | base64
+MWYyZDFlMmU2N2Rm
+```
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: MWYyZDFlMmU2N2Rm
+```
+
+`kubectl create -f ./secret.yaml`
 
 
