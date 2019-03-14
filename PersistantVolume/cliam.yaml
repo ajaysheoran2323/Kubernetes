@@ -22,6 +22,7 @@ spec:
   resources:
     requests:
       storage: 100M
+  volumeName: "pv"
 ---
 kind: Pod
 apiVersion: v1
