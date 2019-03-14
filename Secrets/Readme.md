@@ -50,3 +50,24 @@ data:
 `kubectl create -f ./secret.yaml`
 
 
+#### Consume a secret in pod
+
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: secretvol
+      mountPath: "/mnt/main"
+      readOnly: true
+  volumes:
+  - name: secretvol
+    secret:
+      secretName: mysecret
+```
