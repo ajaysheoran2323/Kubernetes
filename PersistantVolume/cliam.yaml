@@ -22,3 +22,22 @@ spec:
   resources:
     requests:
       storage: 100M
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+spec:
+  volumes:
+    - name: nginx-volume
+      persistentVolumeClaim:
+       claimName: pvc
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-volume
