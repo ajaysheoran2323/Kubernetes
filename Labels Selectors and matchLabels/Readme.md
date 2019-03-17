@@ -88,3 +88,7 @@ The supported operators here are `in` , `notin` and `exists` .
 `kubectl get pod -l 'env in (prod)'`
 
 
+### Selection Via Fields(Field Selector)
+
+
+`kubectl get pod --field-selector metadata.name=example-pod`
