@@ -20,10 +20,6 @@ spec:
       labels:
         app: nginx
     spec:
-      metadata:
-        labels:
-          app: nginx
-          tier: backend
       containers:
       - name: nginx
         image: nginx
