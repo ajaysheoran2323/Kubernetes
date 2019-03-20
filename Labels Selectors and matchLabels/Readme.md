@@ -74,6 +74,8 @@ Create a yaml file with above content , lets say `sample-pod1.yaml` and apply it
 
 `kubectl get po --show-labels`
 
+Equality-based requirement (`=`,`==`,`!=`)
+
 `kubectl get pods  -l env=prod`
 
 `kubectl get pods  -l env!=prod`
