@@ -94,3 +94,11 @@ The supported operators here are `in` , `notin` and `exists` .
 
 
 `kubectl get pod --field-selector metadata.name=example-pod`
+
+
+### Important:
+Selector Supports - Services and ReplicationController
+mactLabels Supports - Job, Deployment, Replica Set, and Daemon Set.
+
+#### matchExpressions
+  matchExpressions is a list of pod selector requirements. Valid operators include In, NotIn, Exists, and DoesNotExist
