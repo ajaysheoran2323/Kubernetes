@@ -36,6 +36,8 @@ kubectl get pod example-pod --show-labels
 
 `kubectl label pod example-pod tier=backend`
 
+`kubectl label pod example-pod key1=value1 key2=value2 etc=etc`
+
 ##### Removing a label:
 
 `kubectl label pod example-pod tier-`
