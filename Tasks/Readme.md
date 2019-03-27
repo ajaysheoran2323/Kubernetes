@@ -7,4 +7,4 @@
       A pod called `pod-b` that has one container running the `kubegoldenguide/alpine-spin:1.0.0` image, and one container running `nginx:1.7.9`
 
 
-Write down the output of `kubectl get pods` for the `ggckad-s0` namespace
+Write down the output of `kubectl get pods` for the `ggckad-s0` namespace and put in Issues section.
